@@ -1,6 +1,6 @@
 {
   "name": "@z-code/vite-plugin-swc",
-  "version": "0.0.1-t",
+  "version": "0.3.1",
   "description": "Vite plugin for transforming source files with SWC.",
   "repository": {
     "type": "git",
@@ -15,8 +15,10 @@
     "plugin",
     "vite-plugin",
     "swc",
+    "top level await",
     "transform",
-    "typescript"
+    "typescript",
+    "stage 3 decorators"
   ],
   "type": "module",
   "files": [
