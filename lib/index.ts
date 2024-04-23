@@ -5,10 +5,12 @@ interface Options extends Omit<SWCOption, "filename" | "sourceFileName"> {
   include?: FilterPattern
 }
 
-export const swc = (
+const swc = (
   options: Options = {
     include: /\.ts?$/,
     exclude: "node_modules",
+    swcrc: false,
+    configFile: false,
     minify: true,
     jsc: {
       parser: {
@@ -47,3 +49,6 @@ export const swc = (
     },
   }
 }
+
+export { swc }
+export default swc

@@ -21,7 +21,7 @@ npm i @z-code/vite-plugin-swc --save-dev
 ### vite.config.ts:
 ```ts
 import { defineConfig } from "vite"
-import { swc } from "@z-code/vite-plugin-swc"
+import swc from "@z-code/vite-plugin-swc"
 
 export default defineConfig({
   plugins: [swc()],
@@ -37,6 +37,8 @@ in **Vanilla TypeScript**
  {
     include: /\.ts?$/,
     exclude: "node_modules",
+    swcrc: false,
+    configFile: false,
     minify: true,
     jsc: {
       parser: {
@@ -51,4 +53,39 @@ in **Vanilla TypeScript**
 }
 ```
 
+If you want to use [.swcrc](https://swc.rs/docs/configuration/swcrc) file:
 
+```ts
+import { defineConfig } from "vite"
+import swc from "@z-code/vite-plugin-swc"
+
+export default defineConfig({
+  plugins: [
+    swc({
+      include: /\.ts?$/,
+      swcrc: true,
+      configFile: true,
+    }),
+  ],
+})
+```
+
+Example [.swcrc](https://swc.rs/docs/configuration/swcrc):
+
+```json
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+  "exclude": "node_modules",
+  "minify": true,
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "decorators": true
+    },
+    "transform": {
+      "decoratorMetadata": true,
+      "decoratorVersion": "2022-03"
+    }
+  }
+}
+```
