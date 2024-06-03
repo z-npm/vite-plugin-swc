@@ -1,4 +1,4 @@
-import { FilterPattern, ResolvedConfig, createFilter } from "vite"
+import { FilterPattern, createFilter } from "@rollup/pluginutils"
 import { transform as SWCTransform, Options as SWCOption } from "@swc/core"
 
 interface Options extends Omit<SWCOption, "filename" | "sourceFileName"> {
@@ -24,7 +24,6 @@ const swc = (
     },
   },
 ) => {
-  let _config: ResolvedConfig
   const { include, ...swcOptions } = options
   const filter = createFilter(options.include, options.exclude)
   return {
@@ -34,9 +33,6 @@ const swc = (
       return {
         esbuild: false,
       } as any
-    },
-    configResolved(resolvedConfig: ResolvedConfig) {
-      _config = resolvedConfig
     },
     transform(code: string, id: string) {
       if (filter(id)) {

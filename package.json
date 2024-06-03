@@ -1,6 +1,6 @@
 {
   "name": "@z-code/vite-plugin-swc",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Vite plugin for transforming source files with SWC.",
   "repository": {
     "type": "git",
@@ -12,8 +12,10 @@
   "license": "MIT",
   "keywords": [
     "vite",
+    "rollup",
     "plugin",
     "vite-plugin",
+    "rollup-plugin",
     "swc",
     "top level await",
     "transform",
@@ -45,9 +47,19 @@
     "vite-plugin-dts": "^3.9.1"
   },
   "peerDependencies": {
-    "vite": "^4 || ^5"
+    "vite": "^4 || ^5",
+    "rollup": "^3 || ^4"
+  },
+  "peerDependenciesMeta": {
+    "rollup": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
   },
   "dependencies": {
+    "@rollup/pluginutils": "^5.1.0",
     "@swc/core": "^1.5.7"
   },
   "packageManager": "yarn@4.2.2"

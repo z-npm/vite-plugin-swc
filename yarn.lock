@@ -717,6 +717,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@z-code/vite-plugin-swc@workspace:."
   dependencies:
+    "@rollup/pluginutils": "npm:^5.1.0"
     "@swc/core": "npm:^1.5.7"
     path: "npm:^0.12.7"
     typescript: "npm:^5.4.5"
