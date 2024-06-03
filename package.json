@@ -47,8 +47,8 @@
     "vite-plugin-dts": "^3.9.1"
   },
   "peerDependencies": {
-    "vite": "^4 || ^5",
-    "rollup": "^3 || ^4"
+    "rollup": "^3 || ^4",
+    "vite": "^4 || ^5"
   },
   "peerDependenciesMeta": {
     "rollup": {
