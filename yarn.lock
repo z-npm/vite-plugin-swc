@@ -778,8 +778,8 @@ __metadata:
     vite: "npm:^6.0.9"
     vite-plugin-dts: "npm:^4.5.0"
   peerDependencies:
-    rollup: ^3 || ^4
-    vite: ^4 || ^5
+    rollup: ">3"
+    vite: ">4"
   peerDependenciesMeta:
     rollup:
       optional: true
