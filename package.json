@@ -1,6 +1,6 @@
 {
   "name": "@z-code/vite-plugin-swc",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "A high-performance Vite plugin that transforms TypeScript and JavaScript files using SWC for lightning-fast builds",
   "homepage": "https://github.com/z-npm/vite-plugin-swc#readme",
   "bugs": {
@@ -53,7 +53,8 @@
     }
   },
   "scripts": {
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "local": "yarn build && yarn unlink && yarn link"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
