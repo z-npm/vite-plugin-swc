@@ -1,4 +1,5 @@
 import { defineConfig } from "vite"
+import { nodeExternals } from "rollup-plugin-node-externals"
 import { swc } from "./lib"
 import dts from "vite-plugin-dts"
 import path from "path"
@@ -23,6 +24,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    nodeExternals(),
     swc(),
     dts({
       // include: ["lib/**"],

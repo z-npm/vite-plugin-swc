@@ -28,11 +28,11 @@ const swc = (
   const filter = createFilter(options.include, options.exclude)
   return {
     name: "vite-plugin-swc",
-    enforce: "pre" as any,
+    enforce: "pre",
     config() {
       return {
         esbuild: false,
-      } as any
+      }
     },
     transform(code: string, id: string) {
       if (filter(id)) {
