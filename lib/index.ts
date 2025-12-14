@@ -27,19 +27,21 @@ const swc = (
   const { include, ...swcOptions } = options
   const filter = createFilter(options.include, options.exclude)
   return {
-    name: "vite-plugin-swc",
-    enforce: "pre" as any,
+    name: "vite-plugin-swc" as const,
+    enforce: "pre" as const,
     config() {
-      return { esbuild: false } as any
+      return {
+        esbuild: false as const
+      }
     },
     transform(code: string, id: string) {
-      if (filter(id)) {
-        return SWCTransform(code, {
-          filename: id,
-          sourceFileName: id.split("?", 1)[0],
-          ...swcOptions,
-        })
-      }
+      if (!filter(id)) return
+
+      return SWCTransform(code, {
+        filename: id,
+        sourceFileName: id.split("?", 1)[0],
+        ...swcOptions,
+      })
     },
   }
 }

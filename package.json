@@ -1,8 +1,9 @@
 {
   "name": "@z-code/vite-plugin-swc",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "A high-performance Vite plugin that transforms TypeScript and JavaScript files using SWC for lightning-fast builds",
   "homepage": "https://github.com/z-npm/vite-plugin-swc#readme",
+  "docs": "https://github.com/z-npm/vite-plugin-swc#readme",
   "bugs": {
     "url": "https://github.com/z-npm/vite-plugin-swc/issues"
   },
@@ -15,6 +16,13 @@
     "email": "github@zero-red.dev",
     "url": "https://github.com/zero-red-dev"
   },
+  "maintainers": [
+    {
+      "name": "Zero Red",
+      "email": "github@zero-red.dev",
+      "url": "https://github.com/zero-red-dev"
+    }
+  ],
   "contributors": [
     {
       "name": "Timothée Pillard",
@@ -22,6 +30,14 @@
     }
   ],
   "license": "MIT",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/zero-red-dev"
+  },
+  "social": {
+    "tiktok": "@zero.red.dev",
+    "github": "zero-red-dev"
+  },
   "keywords": [
     "vite",
     "vite-plugin",
@@ -57,10 +73,10 @@
     "local": "yarn build && yarn unlink && yarn link"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
+    "@types/node": "^25.0.2",
     "rollup-plugin-node-externals": "^8.1.2",
     "typescript": "^5.9.3",
-    "vite": "^7.2.6",
+    "vite": "^7.2.7",
     "vite-plugin-dts": "^4.5.4"
   },
   "peerDependencies": {
@@ -77,7 +93,7 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.3.0",
-    "@swc/core": "^1.15.3"
+    "@swc/core": "^1.15.4"
   },
   "engines": {
     "node": ">=18.0.0",
