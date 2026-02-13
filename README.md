@@ -1,5 +1,5 @@
-# @z-code/vite-plugin-swc
-[![npm](https://img.shields.io/npm/v/@z-code/vite-plugin-swc)](https://www.npmjs.com/package/@z-code/vite-plugin-swc) [![license](https://img.shields.io/npm/l/@z-code/vite-plugin-swc)](https://www.npmjs.com/package/@z-code/vite-plugin-swc)
+# @o.z/vite-plugin-swc
+[![npm](https://img.shields.io/npm/v/@o.z/vite-plugin-swc)](https://www.npmjs.com/package/@o.z/vite-plugin-swc) [![license](https://img.shields.io/npm/l/@o.z/vite-plugin-swc)](https://www.npmjs.com/package/@o.z/vite-plugin-swc)
 
 A [Vite](https://vitejs.dev/) plugin that transforms TypeScript and JavaScript source files using [SWC](https://swc.rs) during the build process. SWC is a super-fast Rust-based compiler that significantly accelerates your build times compared to traditional Babel or tsc compilation.
 
@@ -19,17 +19,17 @@ A [Vite](https://vitejs.dev/) plugin that transforms TypeScript and JavaScript s
 
 yarn
 ```bash
-yarn add @z-code/vite-plugin-swc --dev
+yarn add @o.z/vite-plugin-swc --dev
 ```
 
 pnpm
 ```bash
-pnpm add @z-code/vite-plugin-swc --save-dev
+pnpm add @o.z/vite-plugin-swc --save-dev
 ```
 
 npm
 ```bash
-npm install @z-code/vite-plugin-swc --save-dev
+npm install @o.z/vite-plugin-swc --save-dev
 ```
 
 
@@ -39,7 +39,7 @@ Add the plugin to your Vite configuration:
 ```ts
 // vite.config.ts
 import { defineConfig } from "vite";
-import swc from "@z-code/vite-plugin-swc";
+import swc from "@o.z/vite-plugin-swc";
 
 export default defineConfig({
   plugins: [swc()],
@@ -87,7 +87,7 @@ You can override any of the default options:
 ```ts 
 // vite.config.ts
 import { defineConfig } from "vite";
-import swc from "@z-code/vite-plugin-swc";
+import swc from "@o.z/vite-plugin-swc";
 
 export default defineConfig({
   plugins: [
@@ -120,7 +120,7 @@ If you prefer to use a configuration file, set swcrc and configFile to true:
 ```ts 
 // vite.config.ts
 import { defineConfig } from "vite";
-import swc from "@z-code/vite-plugin-swc";
+import swc from "@o.z/vite-plugin-swc";
 
 export default defineConfig({
   plugins: [
@@ -177,13 +177,13 @@ This plugin is a fork of [vite-plugin-swc-transform](https://github.com/ziir/vit
 ```bash
 npm uninstall vite-plugin-swc-transform
 
-npm install @z-code/vite-plugin-swc --save-dev
+npm install @o.z/vite-plugin-swc --save-dev
 ```
 
 2. Update your Vite config import:
 ```diff
 - import swc from "vite-plugin-swc-transform"
-+ import swc from "@z-code/vite-plugin-swc"
++ import swc from "@o.z/vite-plugin-swc"
 ```
 
 3. Enjoy improved performance and additional features!
@@ -199,6 +199,9 @@ This project is a fork of [vite-plugin-swc-transform](https://github.com/ziir/vi
 [TypeScript Decorators Proposal](https://github.com/tc39/proposal-decorators)
 
 [SWC Configuration Schema](https://swc.rs/docs/configuration/swcrc)
+
+## 📚 Dev API Reference
+[Dev API Docs](docs/api/README.md)
 
 ## 🐛 Issues and Contributions
 Found a bug or have a feature request? Please open an issue on [GitHub](https://github.com/z-npm/vite-plugin-swc/issues).

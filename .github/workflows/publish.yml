@@ -9,9 +9,7 @@ on:
 env:
   NODE_VERSION: "24.x"
   REGISTRY: "https://registry.npmjs.org"
-  SCOPE: "@z-code"
-  # USER: ${{ github.actor }}
-  # PASS: ${{ secrets.GITHUB_TOKEN }}
+  SCOPE: "@o.z"
 
 jobs:
   publish:
