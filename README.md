@@ -53,7 +53,7 @@ When no options are provided, the plugin uses the following defaults:
 
 ```ts 
 {
-  include: /\.ts?$/,
+  include: /\.(ts|tsx|js|jsx)$/,
   exclude: "node_modules",
   swcrc: false,
   configFile: false,

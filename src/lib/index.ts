@@ -39,7 +39,21 @@ export interface Options extends Omit<SWCOption, "filename" | "sourceFileName" |
  * @param options - Configuration options for the plugin and SWC.
  * @returns A Vite plugin instance.
  */
-export const swc = (options: Options = {}): Plugin => {
+export const swc = (options: Options = {
+  swcrc: false,
+  configFile: false,
+  minify: true,
+  jsc: {
+    parser: {
+      syntax: "typescript",
+      decorators: true,
+    },
+    transform: {
+      decoratorMetadata: true,
+      decoratorVersion: "2022-03",
+    },
+  },
+}): Plugin => {
   // Default include/exclude patterns – now covering .ts, .tsx, .js, .jsx
   const {
     include = /\.(ts|tsx|js|jsx)$/,
