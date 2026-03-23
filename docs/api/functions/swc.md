@@ -6,7 +6,7 @@
 
 > **swc**(`options?`): `Plugin`
 
-Defined in: [src/lib/index.ts:42](https://github.com/z-npm/vite-plugin-swc/blob/58c75dbdee8c5cc96a749cf9a8df0713684576b0/src/lib/index.ts#L42)
+Defined in: [src/lib/index.ts:45](https://github.com/z-npm/vite-plugin-swc/blob/71fa512776d323045bd05dcaa590eba042d6aede/src/lib/index.ts#L45)
 
 Vite plugin that transforms TypeScript and JavaScript files using SWC.
 It disables Vite's default esbuild transform to let SWC handle the compilation,

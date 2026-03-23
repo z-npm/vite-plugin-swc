@@ -6,7 +6,10 @@ import { transform as SWCTransform, Options as SWCOption } from "@swc/core"
  * Options for the Vite SWC plugin.
  * Extends SWC's transformation options, omitting `filename`, `sourceFileName` and `exclude`
  */
-export interface Options extends Omit<SWCOption, "filename" | "sourceFileName" | "exclude"> {
+export interface Options extends Omit<
+  SWCOption,
+  "filename" | "sourceFileName" | "exclude"
+> {
   /**
    * A picomatch pattern, or array of patterns, which specifies the files to include.
    * @default /\.(ts|tsx|js|jsx)$/
@@ -39,21 +42,23 @@ export interface Options extends Omit<SWCOption, "filename" | "sourceFileName" |
  * @param options - Configuration options for the plugin and SWC.
  * @returns A Vite plugin instance.
  */
-export const swc = (options: Options = {
-  swcrc: false,
-  configFile: false,
-  minify: true,
-  jsc: {
-    parser: {
-      syntax: "typescript",
-      decorators: true,
-    },
-    transform: {
-      decoratorMetadata: true,
-      decoratorVersion: "2022-03",
+export const swc = (
+  options: Options = {
+    swcrc: false,
+    configFile: false,
+    minify: true,
+    jsc: {
+      parser: {
+        syntax: "typescript",
+        decorators: true,
+      },
+      transform: {
+        decoratorMetadata: true,
+        decoratorVersion: "2022-03",
+      },
     },
   },
-}): Plugin => {
+): Plugin => {
   // Default include/exclude patterns – now covering .ts, .tsx, .js, .jsx
   const {
     include = /\.(ts|tsx|js|jsx)$/,
@@ -69,6 +74,7 @@ export const swc = (options: Options = {
 
     config() {
       return {
+        oxc: false,
         esbuild: false, // Disable esbuild, we'll use SWC instead
       }
     },
@@ -79,9 +85,10 @@ export const swc = (options: Options = {
       try {
         // Determine if source maps should be generated based on Vite's config
         // `this.environment.config` is available inside the transform hook
-        const sourceMaps = this.environment.config.command === "build"
-          ? !!this.environment.config.build.sourcemap
-          : !!this.environment.config.css?.devSourcemap // For dev, you might want to align with css sourcemaps or a dedicated flag
+        const sourceMaps =
+          this.environment.config.command === "build"
+            ? !!this.environment.config.build.sourcemap
+            : !!this.environment.config.css?.devSourcemap // For dev, you might want to align with css sourcemaps or a dedicated flag
 
         const result = await SWCTransform(code, {
           filename: id,
@@ -97,13 +104,10 @@ export const swc = (options: Options = {
         }
       } catch (error: any) {
         // Enhance error message with file information and re-throw as a plugin error
-        this.error(
-          `SWC transform failed in ${id}: ${error?.message || error}`
-        )
+        this.error(`SWC transform failed in ${id}: ${error?.message || error}`)
       }
     },
   }
 }
 
 export default swc
-

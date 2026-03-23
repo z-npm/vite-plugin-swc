@@ -4,7 +4,7 @@
 
 # Interface: Options
 
-Defined in: [src/lib/index.ts:9](https://github.com/z-npm/vite-plugin-swc/blob/58c75dbdee8c5cc96a749cf9a8df0713684576b0/src/lib/index.ts#L9)
+Defined in: [src/lib/index.ts:9](https://github.com/z-npm/vite-plugin-swc/blob/71fa512776d323045bd05dcaa590eba042d6aede/src/lib/index.ts#L9)
 
 Options for the Vite SWC plugin.
 Extends SWC's transformation options, omitting `filename`, `sourceFileName` and `exclude`
@@ -17,9 +17,9 @@ Extends SWC's transformation options, omitting `filename`, `sourceFileName` and 
 
 ### include?
 
-> `optional` **include**: `FilterPattern`
+> `optional` **include?**: `FilterPattern`
 
-Defined in: [src/lib/index.ts:14](https://github.com/z-npm/vite-plugin-swc/blob/58c75dbdee8c5cc96a749cf9a8df0713684576b0/src/lib/index.ts#L14)
+Defined in: [src/lib/index.ts:17](https://github.com/z-npm/vite-plugin-swc/blob/71fa512776d323045bd05dcaa590eba042d6aede/src/lib/index.ts#L17)
 
 A picomatch pattern, or array of patterns, which specifies the files to include.
 
@@ -33,9 +33,9 @@ A picomatch pattern, or array of patterns, which specifies the files to include.
 
 ### exclude?
 
-> `optional` **exclude**: `FilterPattern`
+> `optional` **exclude?**: `FilterPattern`
 
-Defined in: [src/lib/index.ts:20](https://github.com/z-npm/vite-plugin-swc/blob/58c75dbdee8c5cc96a749cf9a8df0713684576b0/src/lib/index.ts#L20)
+Defined in: [src/lib/index.ts:23](https://github.com/z-npm/vite-plugin-swc/blob/71fa512776d323045bd05dcaa590eba042d6aede/src/lib/index.ts#L23)
 
 A picomatch pattern, or array of patterns, which specifies the files to exclude.
 
@@ -49,7 +49,7 @@ A picomatch pattern, or array of patterns, which specifies the files to exclude.
 
 ### script?
 
-> `optional` **script**: `boolean`
+> `optional` **script?**: `boolean`
 
 Defined in: node\_modules/@swc/types/index.d.ts:256
 
@@ -63,7 +63,7 @@ If true, a file is parsed as a script instead of module.
 
 ### cwd?
 
-> `optional` **cwd**: `string`
+> `optional` **cwd?**: `string`
 
 Defined in: node\_modules/@swc/types/index.d.ts:263
 
@@ -80,7 +80,7 @@ Defaults to `process.cwd()`.
 
 ### caller?
 
-> `optional` **caller**: `CallerOptions`
+> `optional` **caller?**: `CallerOptions`
 
 Defined in: node\_modules/@swc/types/index.d.ts:264
 
@@ -92,7 +92,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:264
 
 ### root?
 
-> `optional` **root**: `string`
+> `optional` **root?**: `string`
 
 Defined in: node\_modules/@swc/types/index.d.ts:290
 
@@ -113,7 +113,7 @@ Defaults to `opts.cwd`
 
 ### rootMode?
 
-> `optional` **rootMode**: `"root"` \| `"upward"` \| `"upward-optional"`
+> `optional` **rootMode?**: `"root"` \| `"upward"` \| `"upward-optional"`
 
 Defined in: node\_modules/@swc/types/index.d.ts:321
 
@@ -152,7 +152,7 @@ which can lead to unexpected errors and compilation failure.
 
 ### envName?
 
-> `optional` **envName**: `string`
+> `optional` **envName?**: `string`
 
 Defined in: node\_modules/@swc/types/index.d.ts:330
 
@@ -171,7 +171,7 @@ Defaults to `process.env.SWC_ENV || process.env.NODE_ENV || "development"`
 
 ### configFile?
 
-> `optional` **configFile**: `string` \| `boolean`
+> `optional` **configFile?**: `string` \| `boolean`
 
 Defined in: node\_modules/@swc/types/index.d.ts:346
 
@@ -196,7 +196,7 @@ Defaults to `path.resolve(opts.root, ".swcrc")`
 
 ### swcrc?
 
-> `optional` **swcrc**: `boolean`
+> `optional` **swcrc?**: `boolean`
 
 Defined in: node\_modules/@swc/types/index.d.ts:358
 
@@ -217,7 +217,7 @@ Defaults to true as long as the filename option has been specified
 
 ### swcrcRoots?
 
-> `optional` **swcrcRoots**: `boolean` \| `MatchPattern` \| `MatchPattern`[]
+> `optional` **swcrcRoots?**: `boolean` \| `MatchPattern` \| `MatchPattern`[]
 
 Defined in: node\_modules/@swc/types/index.d.ts:377
 
@@ -242,7 +242,7 @@ Defaults to `opts.root`
 
 ### inputSourceMap?
 
-> `optional` **inputSourceMap**: `string` \| `boolean`
+> `optional` **inputSourceMap?**: `string` \| `boolean`
 
 Defined in: node\_modules/@swc/types/index.d.ts:387
 
@@ -262,7 +262,7 @@ Defaults to `true`.
 
 ### sourceRoot?
 
-> `optional` **sourceRoot**: `string`
+> `optional` **sourceRoot?**: `string`
 
 Defined in: node\_modules/@swc/types/index.d.ts:397
 
@@ -276,7 +276,7 @@ The sourceRoot fields to set in the generated source map, if one is desired.
 
 ### plugin?
 
-> `optional` **plugin**: `Plugin`
+> `optional` **plugin?**: `Plugin`
 
 Defined in: node\_modules/@swc/types/index.d.ts:398
 
@@ -288,7 +288,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:398
 
 ### isModule?
 
-> `optional` **isModule**: `boolean` \| `"unknown"` \| `"commonjs"`
+> `optional` **isModule?**: `boolean` \| `"unknown"` \| `"commonjs"`
 
 Defined in: node\_modules/@swc/types/index.d.ts:399
 
@@ -300,7 +300,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:399
 
 ### outputPath?
 
-> `optional` **outputPath**: `string`
+> `optional` **outputPath?**: `string`
 
 Defined in: node\_modules/@swc/types/index.d.ts:404
 
@@ -315,7 +315,7 @@ of source map files and swc does not write output to this path.
 
 ### test?
 
-> `optional` **test**: `string` \| `string`[]
+> `optional` **test?**: `string` \| `string`[]
 
 Defined in: node\_modules/@swc/types/index.d.ts:418
 
@@ -329,7 +329,7 @@ Note: The type is string because it follows rust's regex syntax.
 
 ### env?
 
-> `optional` **env**: `EnvConfig`
+> `optional` **env?**: `EnvConfig`
 
 Defined in: node\_modules/@swc/types/index.d.ts:423
 
@@ -341,7 +341,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:423
 
 ### jsc?
 
-> `optional` **jsc**: `JscConfig`
+> `optional` **jsc?**: `JscConfig`
 
 Defined in: node\_modules/@swc/types/index.d.ts:424
 
@@ -353,7 +353,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:424
 
 ### module?
 
-> `optional` **module**: `ModuleConfig`
+> `optional` **module?**: `ModuleConfig`
 
 Defined in: node\_modules/@swc/types/index.d.ts:425
 
@@ -365,7 +365,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:425
 
 ### minify?
 
-> `optional` **minify**: `boolean`
+> `optional` **minify?**: `boolean`
 
 Defined in: node\_modules/@swc/types/index.d.ts:426
 
@@ -377,7 +377,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:426
 
 ### sourceMaps?
 
-> `optional` **sourceMaps**: `boolean` \| `"inline"`
+> `optional` **sourceMaps?**: `boolean` \| `"inline"`
 
 Defined in: node\_modules/@swc/types/index.d.ts:438
 
@@ -399,7 +399,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:438
 
 ### inlineSourcesContent?
 
-> `optional` **inlineSourcesContent**: `boolean`
+> `optional` **inlineSourcesContent?**: `boolean`
 
 Defined in: node\_modules/@swc/types/index.d.ts:439
 
