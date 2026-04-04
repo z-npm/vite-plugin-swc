@@ -4,7 +4,7 @@
 
 # Interface: Options
 
-Defined in: [src/lib/index.ts:9](https://github.com/z-npm/vite-plugin-swc/blob/71fa512776d323045bd05dcaa590eba042d6aede/src/lib/index.ts#L9)
+Defined in: [src/lib/index.ts:9](https://github.com/z-npm/vite-plugin-swc/blob/591e49fb74c9079f493dcc5cbf75990db0ece68e/src/lib/index.ts#L9)
 
 Options for the Vite SWC plugin.
 Extends SWC's transformation options, omitting `filename`, `sourceFileName` and `exclude`
@@ -19,7 +19,7 @@ Extends SWC's transformation options, omitting `filename`, `sourceFileName` and 
 
 > `optional` **include?**: `FilterPattern`
 
-Defined in: [src/lib/index.ts:17](https://github.com/z-npm/vite-plugin-swc/blob/71fa512776d323045bd05dcaa590eba042d6aede/src/lib/index.ts#L17)
+Defined in: [src/lib/index.ts:17](https://github.com/z-npm/vite-plugin-swc/blob/591e49fb74c9079f493dcc5cbf75990db0ece68e/src/lib/index.ts#L17)
 
 A picomatch pattern, or array of patterns, which specifies the files to include.
 
@@ -35,7 +35,7 @@ A picomatch pattern, or array of patterns, which specifies the files to include.
 
 > `optional` **exclude?**: `FilterPattern`
 
-Defined in: [src/lib/index.ts:23](https://github.com/z-npm/vite-plugin-swc/blob/71fa512776d323045bd05dcaa590eba042d6aede/src/lib/index.ts#L23)
+Defined in: [src/lib/index.ts:23](https://github.com/z-npm/vite-plugin-swc/blob/591e49fb74c9079f493dcc5cbf75990db0ece68e/src/lib/index.ts#L23)
 
 A picomatch pattern, or array of patterns, which specifies the files to exclude.
 
@@ -51,7 +51,7 @@ A picomatch pattern, or array of patterns, which specifies the files to exclude.
 
 > `optional` **script?**: `boolean`
 
-Defined in: node\_modules/@swc/types/index.d.ts:256
+Defined in: node\_modules/@swc/types/index.d.ts:258
 
 If true, a file is parsed as a script instead of module.
 
@@ -65,7 +65,7 @@ If true, a file is parsed as a script instead of module.
 
 > `optional` **cwd?**: `string`
 
-Defined in: node\_modules/@swc/types/index.d.ts:263
+Defined in: node\_modules/@swc/types/index.d.ts:265
 
 The working directory that all paths in the programmatic
 options will be resolved relative to.
@@ -82,7 +82,7 @@ Defaults to `process.cwd()`.
 
 > `optional` **caller?**: `CallerOptions`
 
-Defined in: node\_modules/@swc/types/index.d.ts:264
+Defined in: node\_modules/@swc/types/index.d.ts:266
 
 #### Inherited from
 
@@ -94,7 +94,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:264
 
 > `optional` **root?**: `string`
 
-Defined in: node\_modules/@swc/types/index.d.ts:290
+Defined in: node\_modules/@swc/types/index.d.ts:292
 
 The initial path that will be processed based on the "rootMode" to
 determine the conceptual root folder for the current Swc project.
@@ -115,7 +115,7 @@ Defaults to `opts.cwd`
 
 > `optional` **rootMode?**: `"root"` \| `"upward"` \| `"upward-optional"`
 
-Defined in: node\_modules/@swc/types/index.d.ts:321
+Defined in: node\_modules/@swc/types/index.d.ts:323
 
 This option, combined with the "root" value, defines how Swc chooses
 its project root. The different modes define different ways that Swc
@@ -123,25 +123,25 @@ can process the "root" value to get the final project root.
 
 "root" - Passes the "root" value through as unchanged.
 "upward" - Walks upward from the "root" directory, looking for a directory
-containing a swc.config.js file, and throws an error if a swc.config.js
+containing a .swcrc file, and throws an error if a .swcrc
 is not found.
 "upward-optional" - Walk upward from the "root" directory, looking for
-a directory containing a swc.config.js file, and falls back to "root"
- if a swc.config.js is not found.
+a directory containing a .swcrc file, and falls back to "root"
+ if a .swcrc is not found.
 
 "root" is the default mode because it avoids the risk that Swc
-will accidentally load a swc.config.js that is entirely outside
+will accidentally load a .swcrc that is entirely outside
 of the current project folder. If you use "upward-optional",
 be aware that it will walk up the directory structure all the
 way to the filesystem root, and it is always possible that someone
-will have a forgotten swc.config.js in their home directory,
+will have a forgotten .swcrc in their home directory,
 which could cause unexpected errors in your builds.
 
 Users with monorepo project structures that run builds/tests on a
 per-package basis may well want to use "upward" since monorepos
-often have a swc.config.js in the project root. Running Swc
+often have a .swcrc in the project root. Running Swc
 in a monorepo subdirectory without "upward", will cause Swc
-to skip loading any swc.config.js files in the project root,
+to skip loading any .swcrc files in the project root,
 which can lead to unexpected errors and compilation failure.
 
 #### Inherited from
@@ -154,7 +154,7 @@ which can lead to unexpected errors and compilation failure.
 
 > `optional` **envName?**: `string`
 
-Defined in: node\_modules/@swc/types/index.d.ts:330
+Defined in: node\_modules/@swc/types/index.d.ts:332
 
 The current active environment used during configuration loading.
 This value is used as the key when resolving "env" configs,
@@ -173,7 +173,7 @@ Defaults to `process.env.SWC_ENV || process.env.NODE_ENV || "development"`
 
 > `optional` **configFile?**: `string` \| `boolean`
 
-Defined in: node\_modules/@swc/types/index.d.ts:346
+Defined in: node\_modules/@swc/types/index.d.ts:348
 
 Defaults to searching for a default `.swcrc` file, but can
 be passed the path of any JS or JSON5 config file.
@@ -198,7 +198,7 @@ Defaults to `path.resolve(opts.root, ".swcrc")`
 
 > `optional` **swcrc?**: `boolean`
 
-Defined in: node\_modules/@swc/types/index.d.ts:358
+Defined in: node\_modules/@swc/types/index.d.ts:360
 
 true will enable searching for configuration files relative to the "filename" provided to Swc.
 
@@ -219,7 +219,7 @@ Defaults to true as long as the filename option has been specified
 
 > `optional` **swcrcRoots?**: `boolean` \| `MatchPattern` \| `MatchPattern`[]
 
-Defined in: node\_modules/@swc/types/index.d.ts:377
+Defined in: node\_modules/@swc/types/index.d.ts:379
 
 By default, Babel will only search for .babelrc files within the "root" package
  because otherwise Babel cannot know if a given .babelrc is meant to be loaded,
@@ -244,7 +244,7 @@ Defaults to `opts.root`
 
 > `optional` **inputSourceMap?**: `string` \| `boolean`
 
-Defined in: node\_modules/@swc/types/index.d.ts:387
+Defined in: node\_modules/@swc/types/index.d.ts:389
 
 `true` will attempt to load an input sourcemap from the file itself, if it
 contains a //# sourceMappingURL=... comment. If no map is found, or the
@@ -264,7 +264,7 @@ Defaults to `true`.
 
 > `optional` **sourceRoot?**: `string`
 
-Defined in: node\_modules/@swc/types/index.d.ts:397
+Defined in: node\_modules/@swc/types/index.d.ts:399
 
 The sourceRoot fields to set in the generated source map, if one is desired.
 
@@ -278,7 +278,7 @@ The sourceRoot fields to set in the generated source map, if one is desired.
 
 > `optional` **plugin?**: `Plugin`
 
-Defined in: node\_modules/@swc/types/index.d.ts:398
+Defined in: node\_modules/@swc/types/index.d.ts:400
 
 #### Inherited from
 
@@ -290,7 +290,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:398
 
 > `optional` **isModule?**: `boolean` \| `"unknown"` \| `"commonjs"`
 
-Defined in: node\_modules/@swc/types/index.d.ts:399
+Defined in: node\_modules/@swc/types/index.d.ts:401
 
 #### Inherited from
 
@@ -302,7 +302,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:399
 
 > `optional` **outputPath?**: `string`
 
-Defined in: node\_modules/@swc/types/index.d.ts:404
+Defined in: node\_modules/@swc/types/index.d.ts:406
 
 Destination path. Note that this value is used only to fix source path
 of source map files and swc does not write output to this path.
@@ -317,7 +317,7 @@ of source map files and swc does not write output to this path.
 
 > `optional` **test?**: `string` \| `string`[]
 
-Defined in: node\_modules/@swc/types/index.d.ts:418
+Defined in: node\_modules/@swc/types/index.d.ts:420
 
 Note: The type is string because it follows rust's regex syntax.
 
@@ -331,7 +331,7 @@ Note: The type is string because it follows rust's regex syntax.
 
 > `optional` **env?**: `EnvConfig`
 
-Defined in: node\_modules/@swc/types/index.d.ts:423
+Defined in: node\_modules/@swc/types/index.d.ts:425
 
 #### Inherited from
 
@@ -343,7 +343,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:423
 
 > `optional` **jsc?**: `JscConfig`
 
-Defined in: node\_modules/@swc/types/index.d.ts:424
+Defined in: node\_modules/@swc/types/index.d.ts:426
 
 #### Inherited from
 
@@ -355,7 +355,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:424
 
 > `optional` **module?**: `ModuleConfig`
 
-Defined in: node\_modules/@swc/types/index.d.ts:425
+Defined in: node\_modules/@swc/types/index.d.ts:427
 
 #### Inherited from
 
@@ -367,7 +367,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:425
 
 > `optional` **minify?**: `boolean`
 
-Defined in: node\_modules/@swc/types/index.d.ts:426
+Defined in: node\_modules/@swc/types/index.d.ts:428
 
 #### Inherited from
 
@@ -379,7 +379,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:426
 
 > `optional` **sourceMaps?**: `boolean` \| `"inline"`
 
-Defined in: node\_modules/@swc/types/index.d.ts:438
+Defined in: node\_modules/@swc/types/index.d.ts:440
 
 - true to generate a sourcemap for the code and include it in the result object.
 - "inline" to generate a sourcemap and append it as a data URL to the end of the code, but not include it in the result object.
@@ -401,7 +401,7 @@ Defined in: node\_modules/@swc/types/index.d.ts:438
 
 > `optional` **inlineSourcesContent?**: `boolean`
 
-Defined in: node\_modules/@swc/types/index.d.ts:439
+Defined in: node\_modules/@swc/types/index.d.ts:441
 
 #### Inherited from
 
