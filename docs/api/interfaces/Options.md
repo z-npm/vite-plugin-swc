@@ -4,7 +4,7 @@
 
 # Interface: Options
 
-Defined in: [src/lib/index.ts:9](https://github.com/z-npm/vite-plugin-swc/blob/49133ed71509ddf4bc5483ec2156ca6c0f388954/src/lib/index.ts#L9)
+Defined in: [src/lib/index.ts:9](https://github.com/z-npm/vite-plugin-swc/blob/049f1eb2fc2a8791c34d4991d40257c1a6c5736b/src/lib/index.ts#L9)
 
 Options for the Vite SWC plugin.
 Extends SWC's transformation options, omitting `filename`, `sourceFileName` and `exclude`
@@ -19,7 +19,7 @@ Extends SWC's transformation options, omitting `filename`, `sourceFileName` and 
 
 > `optional` **include?**: `FilterPattern`
 
-Defined in: [src/lib/index.ts:17](https://github.com/z-npm/vite-plugin-swc/blob/49133ed71509ddf4bc5483ec2156ca6c0f388954/src/lib/index.ts#L17)
+Defined in: [src/lib/index.ts:17](https://github.com/z-npm/vite-plugin-swc/blob/049f1eb2fc2a8791c34d4991d40257c1a6c5736b/src/lib/index.ts#L17)
 
 A picomatch pattern, or array of patterns, which specifies the files to include.
 
@@ -35,7 +35,7 @@ A picomatch pattern, or array of patterns, which specifies the files to include.
 
 > `optional` **exclude?**: `FilterPattern`
 
-Defined in: [src/lib/index.ts:23](https://github.com/z-npm/vite-plugin-swc/blob/49133ed71509ddf4bc5483ec2156ca6c0f388954/src/lib/index.ts#L23)
+Defined in: [src/lib/index.ts:23](https://github.com/z-npm/vite-plugin-swc/blob/049f1eb2fc2a8791c34d4991d40257c1a6c5736b/src/lib/index.ts#L23)
 
 A picomatch pattern, or array of patterns, which specifies the files to exclude.
 
