@@ -1,6 +1,6 @@
 {
   "name": "@o.z/vite-plugin-swc",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "A high-performance Vite plugin that transforms TypeScript and JavaScript files using SWC for lightning-fast builds",
   "homepage": "https://github.com/z-npm/vite-plugin-swc#readme",
   "docs": "https://github.com/z-npm/vite-plugin-swc#readme",
